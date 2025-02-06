@@ -1,0 +1,96 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #22223B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #F2E9E4;
+}
+
+/* Container for Home Page */
+.home-container {
+    background: linear-gradient(135deg, #9A8C98, #C9ADA7);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1.2s ease-out;
+    width: 400px;
+}
+
+/* Welcome Message */
+.welcome-message {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color:#22223B
+}
+
+/* Progress Bar / Graph */
+.progress-report {
+    margin: 30px 0;
+    height: 150px; /* Placeholder for a bar graph */
+    background-color: #F2E9E4;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4A4E69;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Camera Scanner Icon Button */
+.camera-scanner {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.camera-scanner img {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.camera-scanner img:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+/* Navigation Icons */
+.nav-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.nav-icons img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.nav-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

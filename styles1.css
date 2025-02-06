@@ -1,0 +1,133 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #22223B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #22223B;
+}
+
+
+/* Text-based Logo */
+.text-logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+   
+}
+
+.class-text {
+    color: #C9ADA7; /* Color for "Class" */
+}
+
+.connect-text {
+    color: #C9ADA7; /* Color for "Connect" */
+}
+
+header h1 {
+    color: #F2E9E4;
+    font-size: 2rem;
+    font-weight: bold;
+    
+}
+
+
+
+/* Sign In Container */
+.signin-container {
+    background: linear-gradient(135deg, #9A8C98, #C9ADA7);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.signin-container h2 {
+    color: #22223B;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+}
+
+ .role-selection {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: #4A4E69;
+} 
+
+.role-selection input[type="radio"] {
+    margin-right: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #9A8C98;
+    border-radius: 5px;
+    background-color: #F2E9E4;
+    color: #4A4E69;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #22223B;
+}
+
+.signin-btn {
+    background: #22223B;
+    color: #F2E9E4;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signin-btn:hover {
+    background-color: #F2E9E4;
+    color: #22223B;
+}
+
+.already-registered{
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.login-link {
+    color: #22223B;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.login-link:hover {
+    color: #F2E9E4;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
