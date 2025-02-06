@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Farming</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles5.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html">AgroBusiness</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="/register">Farmer Register</a></li>
+                <li><a href="/farming">Add Farming</a></li>
+                <li><a href="/details">Farmer Details</a></li>
+                <li><a href="agro-products.html">Agro Products</a></li>
+                <li><a href="record.html">Record</a></li>
+                <li><a href="/" class="logout-button">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="welcome-message">
+            <p>Welcome, <span id="username">{{current_user.username}}</span>!</p>
+        </div>
+    </header>
+    <main>
+        <div class="center-text">
+            <h1>Sell Agro Products and Buy</h1>
+            <p>DBMS Mini Project</p>
+        </div>
+        <section id="add-farming">
+            <h2>Add Farming</h2>
+            <form action="/farming" method="post">
+                <label for="farmingtype">Enter Farming Type:</label>
+                <input type="text" id="farmingtype" name="farmingtype" required><br><br>
+                <button type="submit">Add Farming</button>
+            </form>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="footer-top"></div>
+        <div class="container">
+            <div class="credits">
+                <br>
+                Developed by <a href="/">Aysha Afrah</a>
+            </div>
+        </div>
+    </footer>
+    <button id="move-up-btn" onclick="scrollToTop()">↑</button>
+    <script>
+        // JavaScript for the "Move Up" button functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            var moveUpBtn = document.getElementById('move-up-btn');
+            if (window.scrollY > 200) {
+                moveUpBtn.style.display = 'block';
+            } else {
+                moveUpBtn.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

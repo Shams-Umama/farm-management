@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles9.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/home2">AgroBusiness</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/home2">Home</a></li>
+                <li><a href="/register">Farmer Register</a></li>
+                <li><a href="/farming">Add Farming</a></li>
+                <li><a href="/details">Farmer Details</a></li>
+                <li><a href="/products">Agro Products</a></li>
+                <li><a href="/record">Record</a></li>
+                <li><a href="/login" class="logout-button">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="welcome-message">
+            <p>Welcome, <span id="username">{{ current_user.username }}</span>!</p>
+        </div>
+    </header>
+    <main>
+        <div class="center-text">
+            <h1>Sell Agro Products and Buy</h1>
+            <h2> DBMS Mini Project</h2>
+        </div>
+        <div class="center-text">
+            <h2>Agro Products</h2>
+        </div>
+        
+        <section id="product-list">
+            {% for product in query %}
+            <div class="product-block">
+                <h2>{{ product.productname }}</h2>
+                <p><strong>Price:</strong> ${{ product.price }}</p>
+                <p><strong>Description:</strong> {{ product.productdesc }}</p>
+                <p><strong>Owner Name:</strong> {{ product.username }}</p>
+                <p><strong>Owner Email:</strong> {{ product.email}}</p>
+                <button class="purchase-button" onclick="window.location.href='https://mail.google.com/mail/?view=cm&fs=1&tf=1&to={{product.email}}' ">Purchase</button>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="footer-top"></div>
+        <div class="container">
+            <div class="credits">
+                <br>
+                Developed by <a href="/">Nabiha</a>
+            </div>
+        </div>
+    </footer>
+    <button id="move-up-btn" onclick="scrollToTop()">↑</button>
+    <script>
+        // JavaScript for the "Move Up" button functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+    <script>
+        window.addEventListener('scroll', function() {
+            var moveUpBtn = document.getElementById('move-up-btn');
+            if (window.scrollY > 200) {
+                moveUpBtn.style.display = 'block';
+            } else {
+                moveUpBtn.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

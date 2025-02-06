@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles8.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/home2">AgroBusiness</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/home2">Home</a></li>
+                <li><a href="/register">Farmer Register</a></li>
+                <li><a href="/farming">Add Farming</a></li>
+                <li><a href="/details">Farmer Details</a></li>
+                <li><a href="/products">Agro Products</a></li>
+                <li><a href="/record">Record</a></li>
+                <li><a href="/login" class="logout-button">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="welcome-message">
+            <p>Welcome, <span id="username">{{ current_user.username }}</span>!</p>
+        </div>
+    </header>
+    <main>
+        <div class="center-text">
+            <h1>Add Product</h1>
+            <p>DBMS Mini Project</p>
+        </div>
+        <section id="add-product">
+            <h2>Add New Product</h2>
+            <form action="/add" method="POST">
+                <div class="form-group">
+                    <label for="farmername">Farmer Name</label>
+                    <input type="text" id="{{ current_user.username }}" name="username" value="{{ current_user.username }}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="farmeremail">Farmer Email</label>
+                    <input type="email" id="{{ current_user.email }}" name="email" value="{{ current_user.email }}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="productname">Product Name</label>
+                    <input type="text" id="productname" name="productname" required>
+                </div>
+                <div class="form-group">
+                    <label for="productdesc">Product Description</label>
+                    <input type="text" id="productdesc" name="productdesc" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" id="price" name="price" required>
+                </div>
+                <button type="submit" class="submit-button" onclick="window.location.href='/products'">Add Product</button>
+            </form>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="footer-top"></div>
+        <div class="container">
+            <div class="credits">
+                <br>
+                Developed by <a href="/">Nabiha</a>
+            </div>
+        </div>
+    </footer>
+    <button id="move-up-btn" onclick="scrollToTop()">↑</button>
+    <script>
+        // JavaScript for the "Move Up" button functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+    <script>
+        window.addEventListener('scroll', function() {
+            var moveUpBtn = document.getElementById('move-up-btn');
+            if (window.scrollY > 200) {
+                moveUpBtn.style.display = 'block';
+            } else {
+                moveUpBtn.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

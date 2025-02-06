@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles2.css') }}">
+</head>
+<body>
+    <div class="home-container">
+        <div action="/homepage" method="post"></div>
+
+            <div class="welcome-message">Welcome, {{ current_user.name }}</div>
+           
+
+
+                <!-- Progress Report Placeholder -->
+                <div class="progress-report">Progress Report</div>
+
+                <!-- Camera Scanner Icon -->
+                <div class="camera-scanner">
+                    <img src="{{ url_for('static', filename='scan.png') }}" alt="Scan QR Code">
+                    <!-- <p>Scan the code for marking the Attendance</p> -->
+                </div>
+
+                <!-- Navigation Icons -->
+                <div class="nav-icons">
+                    <img src="{{ url_for('static', filename='home.png') }}" alt="Home">
+                    <img src="{{ url_for('static', filename='attendance.png') }}" alt="Attendance">
+                    <img src="{{ url_for('static', filename='syllabus.png') }}" alt="Syllabus">
+                </div>
+        </form>
+    </div>
+</body>
+</html>

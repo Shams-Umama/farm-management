@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Connect -Log In</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1 class="text-logo">
+            <span class="class-text">Class</span>
+            <span class="connect-text">Connect</span>
+        </h1>
+    </header>
+    
+    <div class="login-container">
+        <h2>Log In</h2>
+        <div class="role-selection">
+            <label>
+                <input type="radio" name="role" value="teacher"> Teacher
+            </label>
+            <label>
+                <input type="radio" name="role" value="student" checked> Student
+            </label>
+        </div>
+        
+        <form action="/login" method="POST" id="loginForm">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit" class="login-btn" onclick="window.location.href='/homepage'" >LogIn</button>
+        </form>
+        
+        <p class="new-user">New User? <a href="{{ url_for('signin') }}" class="signin-link">SignIn</a></p>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

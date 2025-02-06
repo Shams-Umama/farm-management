@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles6.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/home2">AgroBusiness</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/home2">Home</a></li>
+                <li><a href="/register">Farmer Register</a></li>
+                <li><a href="/farming">Add Farming</a></li>
+                <li><a href="/edit">Farmer Details</a></li>
+                <li><a href="/products">Agro Products</a></li>
+                <li><a href="/record">Record</a></li>
+                <li><a href="/login" class="logout-button">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="welcome-message">
+            <p>Welcome, <span id="username">{{ current_user.username }}</span>!</p>
+        </div>
+    </header>
+    <main>
+        <div class="center-text">
+            <h1>Sell Agro Products and Buy</h1>
+            <p>DBMS Mini Project</p>
+        </div>
+        <section id="farmer-details">
+            <h2>Farmer Details</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>R_ID</th>
+                            <th>Farmer Name</th>
+                            <th>Aadhar Number</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Phone Number</th>
+                            <th>Address</th>
+                            <th>Farming</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            <th>Add Product</th>
+                        
+                        
+
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in query %}
+                        <tr>
+                            <th scope="row">{{post.rid}}</th>
+                            <td>{{post.farmername}}</td>
+                            <td>{{post.adharnumber}}</td>
+                            <td>{{post.age}}</td>
+                            <td>{{post.gender}}</td>
+                            <td>{{post.phonenumber}}</td>
+                            <td>{{post.address}}</td>
+                            <td>{{post.farmingtype}}</td>
+                            <td><a href="/edit/{{post.rid}}"><button class="edit-button">Edit </button> </a> </td>
+
+                            <td><a href="/delete/{{post.rid}}"><button oneclick="return confirm('Are you sure to delete data');"
+                                class="bn btn-danger">Delete  </button> </a> </td>
+                             <td> <a href="/add"><button class="add-product-button">Add Product</button></a></td>
+                             
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="footer-top"></div>
+        <div class="container">
+            <div class="credits">
+                <br>
+                Developed by <a href="/">Aysha Afrah</a>
+            </div>
+        </div>
+    </footer>
+    <button id="move-up-btn" onclick="scrollToTop()">↑</button>
+    <script>
+        // JavaScript for the "Move Up" button functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+    <script>
+        window.addEventListener('scroll', function() {
+            var moveUpBtn = document.getElementById('move-up-btn');
+            if (window.scrollY > 200) {
+                moveUpBtn.style.display = 'block';
+            } else {
+                moveUpBtn.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

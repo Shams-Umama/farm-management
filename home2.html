@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles3.css') }}">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Uw8lyyCaqMY5SMX6voGuFRBC6BpRBM_2iLynAAUA7hJaLy0AHiE7wWNS8B9an3Jz624ubay3ihb26L5QNXxGMORrGw8qvTU4kj7i2c3M33Z7CRk3G4DBaWUlajHEKqZ7z2IcVYsQVyiWAMN9tvCZPDi6Ye255elgKK-0zB5knLXwPASyANqTtQ9FBCOcFVI4a6uZGGr9Y8co1UcJfJRUZ4NeSnwQ1gmYr_hsPKoVFRWufFxh3dGa0qG_-zIKU4s3B8UTBjPiqFsdQ4k7sA7g4ryc9AaD0tMJp0pklM0hqJmkmvL_fjbkQQXwpdheqT0oX1u_u8fwOAKXZ4cDq741ncK4Fr9vHqIK-L2MfT1j_IY" charset="UTF-8"></script></head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/home2">AgroBusiness</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/home2">Home</a></li>
+                <li><a href="/register">Farmer Register</a></li>
+                <li><a href="/farming">Add Farming</a></li>
+                <li><a href="/details">Farmer Details</a></li>
+                <li><a href="/agroproducts">Agro Products</a></li>
+                <li><a href="/record">Record</a></li>
+                <li><a href="/" class="logout-button">Logout</a></li>
+            </ul>
+        </nav>
+        {% if current_user.is_authenticated  %}
+        <div class="welcome-message">
+            <p>Welcome, <span id="username">{{current_user.username}}</span>!</p>
+        </div>
+        {% endif %}
+    </header>
+    <main>
+        <div class="center-text">
+            <h1>Sell Agro Products and Buy</h1>
+            <p>DBMS Mini Project</p>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer-top"></div>
+        <div class="container">
+            <div class="credits">
+                <br>
+                Developed by <a href="/">HELP!</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
